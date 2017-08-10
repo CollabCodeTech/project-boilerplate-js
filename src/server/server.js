@@ -1,10 +1,4 @@
-import Express from 'express'
-
-const App = new Express()
-
-App.get(`/`, (req, res) => {
-  res.json({ app: 'CollabCodeBR Project Boilerplate :-)' })
-})
+import App from './App'
 
 App.listen(4200, (port) => {
   console.log('App listen on port: 4200')
