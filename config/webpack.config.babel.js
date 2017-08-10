@@ -1,13 +1,12 @@
 import { join } from 'path'
-import webpack from 'webpack'
 import nodeExternals from 'webpack-node-externals'
 
 const paths = {
   root: join(__dirname, '..'),
-  publicSrc: join(__dirname, 'src', 'app'),
-  publicDist: join(__dirname, 'src', 'dist'),
-  serverSrc: join(__dirname, 'src', 'server'),
-  serverDist: join(__dirname, 'src', 'server', 'dist')
+  publicSrc: join(__dirname, '..', 'src', 'app'),
+  publicDist: join(__dirname, '..', 'src', 'dist'),
+  serverSrc: join(__dirname, '..', 'src', 'server'),
+  serverDist: join(__dirname, '..', 'src', 'server', 'dist')
 }
 
 const server = {
@@ -27,6 +26,7 @@ const server = {
     libraryTarget: 'commonjs2'
   },
   module: {
+    exprContextCritical: false,
     rules: [
       { // Standard Linter
         enforce: 'pre',

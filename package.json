@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cd src/server && node ./server.js",
     "start:dev:server": "npm-run-all --parallel watch:server watch:build",
-    "watch:build": "webpack --watch --colors",
+    "watch:build": "cd ./config && webpack --watch --colors",
     "watch:server": "cd src/server && nodemon ./dist/www",
     "build": "NODE_ENV=production webpack -p"
   },
